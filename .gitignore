@@ -331,3 +331,11 @@ build-*
 .idea/
 cmake-build*
 
+
+JoyShockLibrary/build/
+
+CMakeFiles/3.16.3/
+
+CMakeCache.txt
+
+CMakeFiles/cmake.check_cache
