@@ -4,6 +4,7 @@ project ("JoyShockLibrary" CXX)
 
 include (cmake/LinuxConfig.cmake)
 include (cmake/WindowsConfig.cmake)
+include (cmake/MacConfig.cmake)
 
 if (BUILD_SHARED_LIBS)
     set (JSL_PLATFORM_DEPENDENCY_VISIBILITY PRIVATE)

@@ -587,21 +587,21 @@ public:
 		// factory calibration:
 
 		if (this->left_right == 1 || this->left_right == 3) {
-			stick_cal_x_l[1] = (factory_stick_cal[4] << 8) & 0xF00 | factory_stick_cal[3];
+			stick_cal_x_l[1] = ((factory_stick_cal[4] << 8) & 0xF00) | factory_stick_cal[3];
 			stick_cal_y_l[1] = (factory_stick_cal[5] << 4) | (factory_stick_cal[4] >> 4);
-			stick_cal_x_l[0] = stick_cal_x_l[1] - ((factory_stick_cal[7] << 8) & 0xF00 | factory_stick_cal[6]);
+			stick_cal_x_l[0] = stick_cal_x_l[1] - (((factory_stick_cal[7] << 8) & 0xF00) | factory_stick_cal[6]);
 			stick_cal_y_l[0] = stick_cal_y_l[1] - ((factory_stick_cal[8] << 4) | (factory_stick_cal[7] >> 4));
-			stick_cal_x_l[2] = stick_cal_x_l[1] + ((factory_stick_cal[1] << 8) & 0xF00 | factory_stick_cal[0]);
+			stick_cal_x_l[2] = stick_cal_x_l[1] + (((factory_stick_cal[1] << 8) & 0xF00) | factory_stick_cal[0]);
 			stick_cal_y_l[2] = stick_cal_y_l[1] + ((factory_stick_cal[2] << 4) | (factory_stick_cal[2] >> 4));
 
 		}
 
 		if (this->left_right == 2 || this->left_right == 3) {
-			stick_cal_x_r[1] = (factory_stick_cal[10] << 8) & 0xF00 | factory_stick_cal[9];
+			stick_cal_x_r[1] = ((factory_stick_cal[10] << 8) & 0xF00) | factory_stick_cal[9];
 			stick_cal_y_r[1] = (factory_stick_cal[11] << 4) | (factory_stick_cal[10] >> 4);
-			stick_cal_x_r[0] = stick_cal_x_r[1] - ((factory_stick_cal[13] << 8) & 0xF00 | factory_stick_cal[12]);
+			stick_cal_x_r[0] = stick_cal_x_r[1] - (((factory_stick_cal[13] << 8) & 0xF00) | factory_stick_cal[12]);
 			stick_cal_y_r[0] = stick_cal_y_r[1] - ((factory_stick_cal[14] << 4) | (factory_stick_cal[13] >> 4));
-			stick_cal_x_r[2] = stick_cal_x_r[1] + ((factory_stick_cal[16] << 8) & 0xF00 | factory_stick_cal[15]);
+			stick_cal_x_r[2] = stick_cal_x_r[1] + (((factory_stick_cal[16] << 8) & 0xF00) | factory_stick_cal[15]);
 			stick_cal_y_r[2] = stick_cal_y_r[1] + ((factory_stick_cal[17] << 4) | (factory_stick_cal[16] >> 4));
 
 		}
@@ -609,11 +609,11 @@ public:
 
 		// if there is user calibration data:
 		if ((user_stick_cal[0] | user_stick_cal[1] << 8) == 0xA1B2) {
-			stick_cal_x_l[1] = (user_stick_cal[6] << 8) & 0xF00 | user_stick_cal[5];
+			stick_cal_x_l[1] = ((user_stick_cal[6] << 8) & 0xF00) | user_stick_cal[5];
 			stick_cal_y_l[1] = (user_stick_cal[7] << 4) | (user_stick_cal[6] >> 4);
-			stick_cal_x_l[0] = stick_cal_x_l[1] - ((user_stick_cal[9] << 8) & 0xF00 | user_stick_cal[8]);
+			stick_cal_x_l[0] = stick_cal_x_l[1] - (((user_stick_cal[9] << 8) & 0xF00) | user_stick_cal[8]);
 			stick_cal_y_l[0] = stick_cal_y_l[1] - ((user_stick_cal[10] << 4) | (user_stick_cal[9] >> 4));
-			stick_cal_x_l[2] = stick_cal_x_l[1] + ((user_stick_cal[3] << 8) & 0xF00 | user_stick_cal[2]);
+			stick_cal_x_l[2] = stick_cal_x_l[1] + (((user_stick_cal[3] << 8) & 0xF00) | user_stick_cal[2]);
 			stick_cal_y_l[2] = stick_cal_y_l[1] + ((user_stick_cal[4] << 4) | (user_stick_cal[3] >> 4));
 			//FormJoy::myform1->textBox_lstick_ucal->Text = String::Format(L"L Stick User:\r\nCenter X,Y: ({0:X3}, {1:X3})\r\nX: [{2:X3} - {4:X3}] Y: [{3:X3} - {5:X3}]",
 			//stick_cal_x_l[1], stick_cal_y_l[1], stick_cal_x_l[0], stick_cal_y_l[0], stick_cal_x_l[2], stick_cal_y_l[2]);
@@ -624,11 +624,11 @@ public:
 		}
 
 		if ((user_stick_cal[0xB] | user_stick_cal[0xC] << 8) == 0xA1B2) {
-			stick_cal_x_r[1] = (user_stick_cal[14] << 8) & 0xF00 | user_stick_cal[13];
+			stick_cal_x_r[1] = ((user_stick_cal[14] << 8) & 0xF00) | user_stick_cal[13];
 			stick_cal_y_r[1] = (user_stick_cal[15] << 4) | (user_stick_cal[14] >> 4);
-			stick_cal_x_r[0] = stick_cal_x_r[1] - ((user_stick_cal[17] << 8) & 0xF00 | user_stick_cal[16]);
+			stick_cal_x_r[0] = stick_cal_x_r[1] - (((user_stick_cal[17] << 8) & 0xF00) | user_stick_cal[16]);
 			stick_cal_y_r[0] = stick_cal_y_r[1] - ((user_stick_cal[18] << 4) | (user_stick_cal[17] >> 4));
-			stick_cal_x_r[2] = stick_cal_x_r[1] + ((user_stick_cal[20] << 8) & 0xF00 | user_stick_cal[19]);
+			stick_cal_x_r[2] = stick_cal_x_r[1] + (((user_stick_cal[20] << 8) & 0xF00) | user_stick_cal[19]);
 			stick_cal_y_r[2] = stick_cal_y_r[1] + ((user_stick_cal[21] << 4) | (user_stick_cal[20] >> 4));
 			//FormJoy::myform1->textBox_rstick_ucal->Text = String::Format(L"R Stick User:\r\nCenter X,Y: ({0:X3}, {1:X3})\r\nX: [{2:X3} - {4:X3}] Y: [{3:X3} - {5:X3}]",
 			//stick_cal_x_r[1], stick_cal_y_r[1], stick_cal_x_r[0], stick_cal_y_r[0], stick_cal_x_r[2], stick_cal_y_r[2]);
